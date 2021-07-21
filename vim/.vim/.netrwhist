@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/source/.config/kitty/kitty-themes'
+let g:netrw_dirhist_2='/home/source/Documentos/Aprendiendo-Rust/ejercicios/seccion-1'
+let g:netrw_dirhist_1='/home/source/.vim'

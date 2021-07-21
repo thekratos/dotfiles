@@ -1,0 +1,82 @@
+
+set encoding=utf-8
+set nocompatible
+
+filetype plugin indent on
+syntax on
+
+" Configuracion del indentado "
+set autoindent 
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+
+" Numeracion del texto "
+set number
+set relativenumber
+
+" Configurar la columna y linea actual 
+set cursorline "marca la linea actual"
+"set cursorcolumn "marca la columa actual
+set textwidth=80
+set colorcolumn=+1
+
+" Marcar las busquedas
+set incsearch
+set hlsearch
+
+" usar el portapapeles del equipo
+set clipboard=unnamedplus
+
+" Auto instalacion de Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Plugins "
+
+call plug#begin('~/.vim/plugged') 
+ 
+    " Airline
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    
+    " Surround(Para modificar corchetes, comillas, etc)
+    Plug 'tpope/vim-surround'
+    
+    " Insert/Replace(Modifica el cursor)
+    Plug 'wincent/terminus'
+
+    " Theme-Ayu
+    Plug 'ayu-theme/ayu-vim'
+
+    " Rust.vim
+    Plug 'rust-lang/rust.vim'
+
+    " Fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" Airline
+let g:airline_theme='deus'
+
+" Config Ayu
+set termguicolors   
+let ayucolor="dark" 
+colorscheme ayu
+
+" Fzf
+
+" Atajos de teclado perzonalizados
+
+let mapleader = ","
+
+noremap <leader>w :w<cr>
+noremap <leader>q :q<cr>
+noremap <leader>fs :Files<cr>
+noremap <leader>vt :below vertical terminal<cr>
+noremap <leader>ht :below terminal<cr>
